@@ -1,0 +1,33 @@
+@{ 
+  Layout = "_Layout2";
+  @model IEnumerable<Models.Message_ViewModel>
+}
+<div class="container text-center">
+    <table class="table table-hover table-bordered">
+      <thead class="bg-dark">
+        <tr>
+          <th class="text-center"> ردیف </th>
+          <th class="text-center"> نام و نام خانوادگی </th>
+          <th class="text-center"> موضوع </th>
+          <th class="text-center"> تاریخ </th>
+          <th class="text-center"> ایمیل </th>
+          <th class="text-center" rows="2"> پیام </th>
+        </tr>
+      </thead>
+      <tbody>
+        @foreach (var item in Model)
+        {
+            int i = 1 ;
+            <tr>
+              <td>@i</td>
+              <td>@item.NameFamily</td>
+              <td>@item.Subject</td>
+              <td>@item.Time</td>
+              <td>@item.Email</td>
+              <td>@item.UserMessage</td>
+            </tr>
+            i++; 
+        }
+      </tbody>
+    </table>
+</div>
